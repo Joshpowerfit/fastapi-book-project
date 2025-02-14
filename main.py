@@ -4,7 +4,13 @@ from api.router import api_router
 
 from core.config import settings
 
+
 app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to my FastAPI application!"}
+
 
 app.add_middleware(
     CORSMiddleware,
